@@ -1,0 +1,202 @@
+/* Apply the font globally */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background-color: #FFFFFF; /* White background */
+  }
+  
+  /* Navigation container */
+  .nav-container {
+    position: fixed; /* Fix the position of the container */
+    top: 0; /* Place it at the top of the page */
+    left: 0; /* Align it to the left edge */
+    width: 100%; /* Ensure it spans the full width of the screen */
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center; /* Vertically center items */
+    padding: 10px; /* Add horizontal padding for spacing */
+    color: #ffffff; /* Text color inside container */
+    background-color: #333333f3; /* Semi-transparent dark background */
+    border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+    z-index: 1000; /* Ensure it stays on top of other content */
+    box-sizing: border-box; /* Include padding and border in the element's total width/height */
+    min-height: 50px; /* Set a minimum height for the nav container */
+  }
+  
+  /* Logo styling */
+  .logo {
+    width: 40px; /* Adjust logo size */
+    height: 40px;
+    margin-right: 10px; /* Space between logo and heading */
+    filter: invert(100%); /* Invert the image colors (black to white) */
+  }
+  
+  /* Heading styling */
+  h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 34px; /* Set font size */
+    font-weight: 600; /* Make font bold */
+  }
+  
+  /* Upload container styling */
+  .upload-container {
+    z-index: 2;
+    background-color: #FFFFFF;
+    width: 65%;
+    padding: 40px;
+    border-radius: 10px;
+    position: absolute;
+    top: 20%;
+    left: 12%;
+    display: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  /* Form inputs inside the upload-container */
+  .upload-container input, 
+  .upload-container textarea {
+    background-color: transparent;
+    width: 97%;
+    margin: 5px;
+    padding: 10px;
+    font-size: 20px;
+    border: solid black 2px;
+    border-radius: 4px;
+  }
+  
+  /* Focus style for inputs */
+  .upload-container input:focus, 
+  .upload-container textarea:focus {
+    outline: none;
+    border-color: #333333; /* Highlight border when focused */
+  }
+  
+  /* Upload container buttons */
+  .upload-container button {
+    background-color: #000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    margin: 5px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* Button hover effect */
+  .upload-container button:hover {
+    background-color: #444444;
+    border: none;
+  }
+  
+  /* Popup container for overlay */
+  .popupcontainer {
+    background-color: #000;
+    opacity: 0.8;
+    position: fixed; /* Fixed position to stay in place during scrolling */
+    top: 0;
+    left: 0;
+    z-index: 1; /* Ensure the overlay is above all content */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Allow scrolling if the content overflows */
+    display: none; /* Hidden by default */
+  }
+  
+  
+  /* Plus button for opening the upload form */
+  .plusbtn {
+    width: 50px; /* Increase the size */
+    height: 50px; /* Increase the size */
+    background-color: #333333;
+    color: white;
+    position: fixed;
+    bottom: 20px; /* Adjust the distance from the bottom */
+    right: 24px; /* Adjust the distance from the right */
+    border-radius: 20%; /* Circular button */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px; /* Adjust the font size */
+    text-align: center;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  /* Plus button hover effect */
+  .plusbtn:hover {
+    background-color: rgb(0, 0, 0);
+    cursor: grab;
+    border: none;
+  }
+  
+  /* Button styles inside input containers (for Edit and Delete buttons) */
+  .inputcontainer button {
+    padding: 8px 16px; /* Adjust padding for a better button size */
+    margin: 6px;
+    border-radius: 8px;
+    color: #000;
+    background-color: #ffffff;
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+  }
+  
+  /* Button hover effect for Edit and Delete buttons */
+  .inputcontainer button:hover {
+    background-color: #444444;
+    color: white;
+    border: solid 2px white; /* Add border on hover */
+  }
+  
+  /* Styling for the content containers after saving */
+  .inputcontainer {
+    background-color: #333333;
+    color: white;
+    padding: 15px;
+    display: inline-block;
+    width: 30%;
+    margin: 20px;
+    border-radius: 12px;
+    position: relative;
+    top: 80px;
+    max-height: 300px;
+    overflow: auto;
+    border: 1px solid #444444;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+  }
+  
+  /* Styling for the scrollbar */
+  .inputcontainer::-webkit-scrollbar {
+    width: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+  }
+  
+  .inputcontainer::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+  }
+  
+  .inputcontainer::-webkit-scrollbar-thumb {
+    background-color: #777777;
+    border-radius: 12px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+  }
+  
+  .inputcontainer::-webkit-scrollbar-thumb:hover {
+    background-color: #555555;
+  }
+  
+  .inputcontainer::-webkit-scrollbar-button {
+    display: none;
+  }
+  
